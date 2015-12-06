@@ -10,4 +10,5 @@ object HelloWorld extends App {
 
     println("HAL".increment)
     println("HAL".decrement)
+    println("HAL".hideAll)
 }
