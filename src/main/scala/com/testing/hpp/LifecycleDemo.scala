@@ -29,7 +29,7 @@ class Kenny extends Actor {
     super.postRestart(reason)
   }
 
-  def receive: Receive = {
+  def receive = {
     case ForceRestart => throw new Exception("Boom!")
     case otherMessage => println(s"Kenny received a message: ${otherMessage}")
   }
