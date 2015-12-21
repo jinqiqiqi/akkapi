@@ -29,4 +29,25 @@ object Loopover extends App{
     case(name, value) => println(s"$name => $value")
   }
 
+
+//  ##########
+
+  val fruits = Traversable("apple", "banana", "orange", "pear", "cake")
+
+  for (f <- fruits) println(f)
+  println("___")
+  for (f <- fruits) println(f.toUpperCase)
+
+  println("####")
+
+  for (f <- fruits) {
+    val s = f.toUpperCase
+    println(s)
+  }
+
+
+  println("======")
+
+  println(fruits.zipWithIndex)
+
 }
