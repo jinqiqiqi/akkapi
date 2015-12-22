@@ -1,4 +1,4 @@
-package com.testing.hpp
+package com.testing.akkaActor
 
 import akka.actor._
 
