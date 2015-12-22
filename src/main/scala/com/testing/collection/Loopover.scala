@@ -48,6 +48,26 @@ object Loopover extends App{
 
   println("======")
 
-  println(fruits.zipWithIndex)
+  val newArray = for (e <- fruits) yield {
+    e.toUpperCase.reverse
+  }
+  println(newArray)
+
+  println("------------------------------------------------------------------------------------------------------------")
+  println("")
+
+  val days = Array("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+  days.zipWithIndex.foreach {
+    case (day, count) => println(s"$count is $day")
+  }
+
+  for ((day, count) <- days.zipWithIndex) {
+    println(s"$count => $day")
+  }
+
+  for(i <- 0 until days.size) println(s"Element $i is ${days(i)}")
+
+
+
 
 }
