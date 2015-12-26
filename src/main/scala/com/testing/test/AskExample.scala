@@ -1,4 +1,4 @@
-package test
+package com.testing.test
 
 import akka.actor.{Actor, Props, ActorSystem}
 import akka.util.Timeout

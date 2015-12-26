@@ -1,3 +1,5 @@
+package com.testing.test
+
 /**
   * Created by kinch on 12/8/15.
   */

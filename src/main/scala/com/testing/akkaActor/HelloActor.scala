@@ -21,6 +21,8 @@ object Main extends App {
 
   helloActor ! "hello"
   helloActor ! "Buenos dias"
+  
+  helloActor ! "yes"
 
 //  system.terminate
   

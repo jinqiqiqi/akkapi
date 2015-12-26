@@ -1,4 +1,4 @@
-package test
+package com.testing.test
 
 /**
   * Created by kinch on 12/6/15.
