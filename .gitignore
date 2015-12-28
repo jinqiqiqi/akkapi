@@ -4,3 +4,8 @@ target
 .project
 *.class
 *.cache*
+/bin/
+.cache-main
+.settings
+sbt_scala.sublime-project
+sbt_scala.sublime-workspace
