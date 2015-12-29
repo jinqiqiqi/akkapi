@@ -6,9 +6,17 @@ import com.testing.utils.StringUtils.StringImprovements
   * Created by kinch on 12/4/15.
   */
 object HelloWorld extends App {
-    println("Hi world.")
-
-    println("HAL".increment)
-    println("HAL".decrement)
-    println("HAL".hideAll)
+    
+	val car = new Car
+		car.turn("left")
 }
+
+
+
+class Car {
+	def turn(direction: String) = {
+		println("Turning: "+ direction)
+	}
+}
+
+
