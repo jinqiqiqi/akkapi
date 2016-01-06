@@ -6,8 +6,14 @@ package com.testing.classes
 
 class Counter {
   private var value = 0
-  def increment = value += 1
-  def decrement = value -= 1
+  def increment = {
+    value += 1
+    value
+  }
+  def decrement = {
+    value -= 1
+    value
+  }
   def current = value
 }
 object ClassesExample extends App{
@@ -18,8 +24,10 @@ object ClassesExample extends App{
   myCounter.increment
   myCounter.increment
   myCounter.increment
-  myCounter.decrement
+  val y = myCounter.decrement
+  myCounter.increment
 
   val x = myCounter.current
   println(x)
+  println(y)
 }
