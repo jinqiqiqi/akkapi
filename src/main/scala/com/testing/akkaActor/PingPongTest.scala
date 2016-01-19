@@ -22,7 +22,7 @@ class Ping(pong: ActorRef) extends Actor {
       pong ! PingMessage
     case PongMessage =>
       incrementAndPrint
-      if(count > 100) {
+      if(count > 100000) {
         sender ! StopMessage
         println("ping stopped")
         context.stop(self)

@@ -11,4 +11,5 @@ object VectorExample extends App{
   
   val vFruits = for(i <- 0 until fruits.size) yield (i, fruits(i))
   println(vFruits)
+
 }
