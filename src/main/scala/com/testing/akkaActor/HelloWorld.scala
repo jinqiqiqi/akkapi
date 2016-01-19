@@ -1,6 +1,7 @@
 package com.testing.akkaActor
 
-import com.testing.utils.StringUtils.StringImprovements
+import com.testing.test.StringUtils
+import StringUtils.StringImprovements
 
 /**
   * Created by kinch on 12/4/15.
