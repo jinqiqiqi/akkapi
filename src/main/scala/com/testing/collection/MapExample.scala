@@ -38,6 +38,11 @@ object MapExample extends App {
   val map = Map(1 -> 10, 2 -> 20, 3 -> 30)
   val newMap = map.transform((k, v) => k + v)
   println(newMap)
+
+  println()
+  println("keys or values from map: ")
+  println(states.keySet)
+  println(states.keys)
   
   
   
