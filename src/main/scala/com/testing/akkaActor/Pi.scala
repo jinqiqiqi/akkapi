@@ -9,7 +9,7 @@
 //import akka.util.Duration
 //import akka.util.duration._
 //
-//object Pi extends App {
+object Pi extends App {
 //
 //  calculate(nrOfWorkers = 4, nrOfElements = 10000, nrOfMessages = 10000)
 //
@@ -86,5 +86,5 @@
 //    master ! Calculate
 //
 //  }
-//}
+}
 //
