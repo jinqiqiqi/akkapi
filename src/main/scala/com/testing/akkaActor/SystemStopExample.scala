@@ -9,8 +9,11 @@ import scala.language.postfixOps
 class TestActor extends Actor {
   def receive = {
     case "hello" => println("hello")
-    case s => println(s)
+    case s: String => println(s)
+    case _ => println("Unknow message sent to TestActor")
   }
+
+  override def postStop = println("TestActor::postStop called.")
 }
 
 object SystemStopExample extends App{

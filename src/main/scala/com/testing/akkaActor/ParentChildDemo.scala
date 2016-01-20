@@ -2,29 +2,6 @@ package com.testing.akkaActor
 
 import akka.actor._
 
-/**
-  * Created by kinch on 12/19/15.
-  */
-object ParentChildDemo extends App{
-  val system = ActorSystem("ParentChildDemo")
-  val parent = system.actorOf(Props[Parent], name = "Parent")
-
-  parent ! CreateChild("Jonathan")
-  parent ! CreateChild("Jordan")
-  Thread.sleep(500)
-
-  println("Sending Jonathan a PoisonPill ...")
-  val jonathan = system.actorSelection("/user/Parent/Jonathan")
-  jonathan ! PoisonPill
-  println("Jonathan was killed.")
-
-
-  Thread.sleep(500)
-  system.terminate
-
-
-}
-
 
 case class CreateChild(name: String)
 case class Name(name: String)
@@ -35,6 +12,7 @@ class Parent extends Actor {
       println(s"Parent about to create Child ($name)")
       val child = context.actorOf(Props[Child], name=s"$name")
       child ! Name(name)
+      child ! "hi"
     case _ => println(s"Parent got some other message")
   }
 }
@@ -48,6 +26,33 @@ class Child extends Actor {
 
   def receive = {
     case Name(name) => this.name = name
-    case _ => println(s"Child $name got message")
+    case msg => println(s"Child $name got message: $msg")
   }
 }
+
+
+/*
+  * Created by kinch on 12/19/15.
+  */
+object ParentChildDemo extends App{
+  val system = ActorSystem("ParentChildDemo")
+  val parent = system.actorOf(Props[Parent], name = "Parent")
+
+  parent ! CreateChild("Jonathan")
+  parent ! CreateChild("Jordan")
+  println("Start to sleep 3 seconds")
+  Thread.sleep(3000)
+  
+  println()
+  println("Sending Jonathan a PoisonPill ...")
+  val jonathan = system.actorSelection("/user/Parent/Jonathan")
+  jonathan ! PoisonPill
+  println("Jonathan was killed.")
+
+
+  Thread.sleep(500)
+  system.terminate
+
+
+}
+
