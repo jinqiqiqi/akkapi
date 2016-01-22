@@ -1,5 +1,6 @@
 package com.testing.akkaActor
 
+import scala.Predef
 import akka.actor.{Props, ActorSystem, Actor}
 
 /**

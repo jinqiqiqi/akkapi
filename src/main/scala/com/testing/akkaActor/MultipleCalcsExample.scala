@@ -1,10 +1,10 @@
 package com.testing.akkaActor
 
-import akka.actor.Status.Success
+//import akka.actor.Status.Success
 
 import scala.concurrent.{Future}
 import scala.concurrent.ExecutionContext.Implicits.global
-import scala.util.{Random}
+import scala.util.{Random, Success, Failure}
 
 /**
   * Created by kinch on 1/20/16.
@@ -17,17 +17,25 @@ object MultipleCalcsExample extends App {
   val r3 = runAlgrithm(3, "c")
 
   println("Before for-comprehension")
-  val result: Future[Long] = for {
+  val result = for {
     result1 <- r1
     result2 <- r2
     result3 <- r3
   } yield (result1 + result2 + result3)
 
+
+
   println("Before onSuccess")
 
-  result.onComplete{
+  result onSuccess{
+//    case Success(result) => println(s"Total is: ${result}")
     case result => println(s"Result: $result")
-//    case Success(F) => println(s"Total is: ${F}")
+  }
+
+  result onComplete {
+        case Success(result) => println(s"Total is: ${result}")
+        case Failure(e) => e.printStackTrace
+//    case result => println(s":: Result: $result")
   }
 
 
