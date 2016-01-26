@@ -14,4 +14,4 @@ libraryDependencies ++= Seq(
   "com.typesafe.akka" %% "akka-remote" % akkaVersion
 )
 
-mainClass in(Compile, run) := Some("com.testing.akkaActor.Main")
+mainClass in(Compile, run) := Some("com.testing.collection.UsingMapExample")
