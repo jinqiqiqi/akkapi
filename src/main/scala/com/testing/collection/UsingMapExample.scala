@@ -33,4 +33,7 @@ object UsingMapExample extends App {
 
   val newFeed1 = feeds.updated("Venkat Subramaniam", "agiledeveloper.com/blog")
   println(newFeed1)
+
+  val prefixdList = "forums.pragprog.com/forums/87" :: feeds.toList
+  println("==] prepended feed: "+ prefixdList)
 }
