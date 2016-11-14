@@ -1,5 +1,3 @@
-target
-.idea
 .classpath
 .project
 *.class
@@ -9,3 +7,8 @@ target
 .settings
 sbt_scala.sublime-project
 sbt_scala.sublime-workspace
+.ensime*
+.idea*
+.history*
+target/*
+project/*
