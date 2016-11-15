@@ -1,4 +1,4 @@
-//package com.testing.akkaActor;
+//package com.learning.akkaActor;
 ///**
 //  * Copyright (C) 2009-2012 Typesafe Inc. <http://www.typesafe.com>
 //  */

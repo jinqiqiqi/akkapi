@@ -1,6 +1,6 @@
-package com.testing.akkaActor
+package com.learning.akkaActor
 
-import com.testing.test.StringUtils
+import com.learning.test.StringUtils
 import StringUtils.StringImprovements
 
 /**

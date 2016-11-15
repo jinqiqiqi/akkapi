@@ -1,4 +1,4 @@
-package com.testing.akkaActor
+package com.learning.akkaActor
 
 
 import scala.concurrent.{Future, Await}

@@ -2,9 +2,9 @@ name := "HelloScala"
 
 version := "1.0"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.7"
 
-ensimeScalaVersion := "2.10.4"
+ensimeScalaVersion := "2.11.7"
 
 resolvers += "Typesafe Repository" at
   "http://repo.typesafe.com/typesafe/releases/"
@@ -25,4 +25,5 @@ libraryDependencies ++= Seq (
 sublimeProjectDir := new java.io.File("/home/kinch/Public/sbt_scala/")
 
 
-mainClass in(Compile, run) := Some("com.testing.matchDemo.TradeProcessor")
+
+mainClass in(Compile, run) := Some("com.learning.gui.FirstSwingApp")
