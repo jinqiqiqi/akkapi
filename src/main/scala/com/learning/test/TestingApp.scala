@@ -1,4 +1,4 @@
-package com.testing.test
+package com.learning.test
 
 import scala.concurrent.duration.DurationConversions.spanConvert.R
 

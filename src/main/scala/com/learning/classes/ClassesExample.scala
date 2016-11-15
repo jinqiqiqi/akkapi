@@ -1,4 +1,4 @@
-package com.testing.classes
+package com.learning.classes
 
 /**
   * Created by kinch on 12/26/15.

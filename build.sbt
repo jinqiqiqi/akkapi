@@ -4,7 +4,7 @@ version := "1.0"
 
 scalaVersion := "2.11.7"
 
-ensimeScalaVersion := "2.11.7"
+//ensimeScalaVersion := "2.11.7"
 
 resolvers += "Typesafe Repository" at
   "http://repo.typesafe.com/typesafe/releases/"
@@ -22,7 +22,7 @@ libraryDependencies ++= Seq (
     "org.scala-lang" % "scala-swing" % "2.11+"
 )
 
-sublimeProjectDir := new java.io.File("/home/kinch/Public/sbt_scala/")
+//sublimeProjectDir := new java.io.File("/home/kinch/Public/sbt_scala/")
 
 
 

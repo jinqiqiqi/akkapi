@@ -1,4 +1,4 @@
-package com.testing.collection
+package com.learning.collection
 
 /**
   * Created by kinch on 12/21/15.

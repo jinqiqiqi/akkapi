@@ -1,4 +1,4 @@
-package com.testing.traits
+package com.learning.traits
 
 import java.io.StringWriter
 

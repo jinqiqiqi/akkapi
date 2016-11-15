@@ -1,4 +1,4 @@
-package com.testing.collection
+package com.learning.collection
 
 /**
   * Created by kinch on 12/21/15.
@@ -9,7 +9,7 @@ object Loopover extends App{
 
   x.foreach(i => println(i))
 
-  x.foreach((println(_)))
+  x.foreach(println(_))
 
   x.foreach(println)
 

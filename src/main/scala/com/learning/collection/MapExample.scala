@@ -1,4 +1,4 @@
-package com.testing.collection
+package com.learning.collection
 
 object MapExample extends App {
   

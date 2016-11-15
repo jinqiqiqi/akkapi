@@ -18,7 +18,7 @@ class TestActor extends Actor {
 
 object SystemStopExample extends App{
   val system = ActorSystem("SystemStopExample")
-  val actor = system.actorOf(Props[TestActor], name= "com/testing/test")
+  val actor = system.actorOf(Props[TestActor], name= "com/learning/test")
 
   actor ! Kill
 

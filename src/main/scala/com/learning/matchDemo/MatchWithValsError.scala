@@ -1,4 +1,4 @@
-package com.testing.matchDemo
+package com.learning.matchDemo
 
 object MatchWithValsError extends App {
   println("==]\n")
