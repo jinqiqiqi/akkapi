@@ -24,5 +24,5 @@ libraryDependencies ++= Seq (
 
 //sublimeProjectDir := new java.io.File("/home/kinch/Public/sbt_scala/")
 
-
 mainClass in(Compile, run) := Some("com.learning.akkaActor.PerfectNumber")
+//mainClass in(Compile, run) := Some("com.learning.akkaActor.HelloActor")

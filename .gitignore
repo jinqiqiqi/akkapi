@@ -12,3 +12,7 @@ sbt_scala.sublime-workspace
 .history*
 target/*
 project/*
+.DS_Store
+GPATH
+GRTAGS
+GTAGS
