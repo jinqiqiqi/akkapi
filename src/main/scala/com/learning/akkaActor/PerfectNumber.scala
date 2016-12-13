@@ -3,6 +3,8 @@ package com.learning.akkaActor
 
 object PerfectNumber extends App {
 
+  val startTime = System.nanoTime()
+
   def sumOfFactors(number: Int) = {
     println(s"sum of $number")
     (0 /: (1 to number)) { (sum, i) =>
@@ -11,8 +13,11 @@ object PerfectNumber extends App {
 
   def isPerfect(candidate: Int) = sumOfFactors(candidate)
 
-  val t = List(2147483647, 6000000, 6500000, 6400000, 3000000, 4000000, 2100000)
+  val t = List(1674836470)
   for (n <- t)
     println(s"$n => " + isPerfect(n))
+
+  val diff = (System.nanoTime() - startTime)/1000000000.0
+  println(s"Total in $diff seconds")
 
 }

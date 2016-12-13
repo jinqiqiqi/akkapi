@@ -14,12 +14,20 @@ case class MasterMsg(candidate: Int, portions: List[Int]) extends PerfectNumberM
 
 
 
-class MasterActor() extends Actor {
+class MasterActor(startTime: Long, taskLen: Int, sys: ActorSystem) extends Actor {
 
+  var taskLeft = taskLen
   def receive = {
     case MasterMsg(candidate, vlist) =>
       val vt = vlist.sum
-      println(s"total of $candidate = $vt")
+      val endTime = System.nanoTime()
+      val diff = (endTime - startTime)/1000000000.0
+      taskLeft = taskLeft - 1
+      if(taskLeft <=0) {
+        println(s"total of $candidate = $vt, in $diff seconds.")
+        sys.terminate()
+      }
+
 //      sys.shutdown
     case _ => println("error in line 23")
   }
@@ -49,7 +57,7 @@ class WorkerActor(master: ActorRef) extends Actor{
       }
      
       resultMap(candidate) = sumOfFactorsInRange(lower, upper, candidate) :: tmp
-      println(s"$candidate workermsg. $lower")
+//      println(s"$candidate workermsg. $lower")
       if(resultMap(candidate).size == numberofpartitions) {
         master ! MasterMsg(candidate, resultMap(candidate))
         println(s"$candidate send to master")
@@ -60,10 +68,15 @@ class WorkerActor(master: ActorRef) extends Actor{
 
 
 object HelloActor extends App {
-//  case class
+  //  case class
+  val startTime = System.nanoTime()
   val system = ActorSystem("HelloSystem")
 
-  val masterActor = system.actorOf(Props(new MasterActor()), name = "MasterActor")
+//  val t = List(6500000, 6400000, 3000000, 4000000, 2100000)
+
+    val t = List(1674836470)
+
+  val masterActor = system.actorOf(Props(new MasterActor(startTime, t.size, system)), name = "MasterActor")
   val workerActor = system.actorOf(Props(new WorkerActor(masterActor)), name = "WorkerActor")
  
 
@@ -79,7 +92,6 @@ object HelloActor extends App {
     }
   }
 
-  val t = List(2147483647, 6000000, 6500000, 6400000, 3000000, 4000000, 2100000)
   for(n <- t)
     isPerfectConcurrent(n)
 

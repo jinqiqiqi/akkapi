@@ -2,6 +2,8 @@ package com.learning.akkaActor
 
 import akka.actor.{ActorRef, Props, Actor, ActorSystem}
 
+
+
 case object PingMessage
 case object PongMessage
 case object StartMessage
@@ -53,7 +55,7 @@ class Pong extends Actor {
 /**
   * Created by kinch on 12/4/15.
   */
-object PingPongTest extends App{
+object PingPongTest extends App {
   val system = ActorSystem("PingPongSystem")
   val pong = system.actorOf(Props[Pong], name = "pong")
   val ping = system.actorOf(Props(new Ping(pong)), name = "ping")
