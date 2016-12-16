@@ -21,7 +21,7 @@ object AskExample extends App{
   val system = ActorSystem("AskExample")
   val askActor = system.actorOf(Props[AskActor], name="askActor")
 
-  implicit val timeout = Timeout(1 seconds)
+  implicit val timeout = Timeout(01 seconds)
 
   val future = askActor ? AskNameMessage("Fred")
   askActor ! "Kinch"

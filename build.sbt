@@ -17,13 +17,15 @@ libraryDependencies ++= Seq(
 )
 
 libraryDependencies ++= Seq (
-    "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test",
-    "org.scala-lang.modules" %% "scala-xml" % "1.0.2",
-    "org.scala-lang" % "scala-swing" % "2.11+"
+  "org.scalatest" % "scalatest_2.11" % "2.2.1" % "test",
+  "org.scala-lang.modules" %% "scala-xml" % "1.0.2",
+  "org.scala-lang" % "scala-swing" % "2.11+"
+  // "javax.mail" % "mail" % "1.4.7"
 )
 
 //sublimeProjectDir := new java.io.File("/home/kinch/Public/sbt_scala/")
 
 //mainClass in(Compile, run) := Some("com.learning.akkaActor.PerfectNumber")
-mainClass in(Compile, run) := Some("com.learning.akkaActor.HelloActor")
+//mainClass in(Compile, run) := Some("com.learning.akkaActor.HelloActor")
 //mainClass in(Compile, run) := Some("com.learning.basic.ConsoleInput")
+mainClass in(Compile, run) := Some("com.learning.akkaActor.HelloWorld")

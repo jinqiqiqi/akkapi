@@ -1,23 +1,33 @@
 package com.learning.akkaActor
 
-import com.learning.test.StringUtils
-import StringUtils.StringImprovements
+import akka.actor.{ Actor, ActorSystem, Props }
+
+// import akka.actor.{ Actor, ActorSystem, Props }
 
 /**
-  * Created by kinch on 12/4/15.
-  */
+ * Created by kinch on 12/4/15.
+ */
 object HelloWorld extends App {
-    
-	val car = new Car
-		car.turn("left")
+  val system = ActorSystem("HelloWorld")
+  val hello = system.actorOf(Props(new Hello(system)), "hello_actor")
+  hello ! Greeter.SayHi
+
 }
 
+class Hello(sys: ActorSystem) extends Actor {
+  override def preStart(): Unit = {
+    val greeter = context.actorOf(Props[Greeter], "greeter")
+    greeter ! Greeter.Greet
 
+  }
 
-class Car {
-	def turn(direction: String) = {
-		println("Turning: "+ direction)
-	}
+  def receive = {
+    case Greeter.Done =>
+      println("stop???")
+      sys.terminate()
+    case msg =>
+      println(s"nono $msg")
+
+  }
 }
-
 
