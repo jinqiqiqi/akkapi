@@ -2,7 +2,7 @@
   * Created by kinch on 11/1/16.
   */
 
-import com.learning.basic.HtmlUtils
+import com.learning.cookbook.Basics.HtmlUtils
 import org.scalatest._
 
 class HtmlUtilsSpec extends FlatSpec with ShouldMatchers {
